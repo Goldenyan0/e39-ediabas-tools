@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagnostic E39</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--fg:#1d2430;--muted:#5b6575;--line:#e3e7ee;--crit:#c62828;--warn:#e08a00;--info:#2f6fdf;--ok:#2e9e4f}
+@media (prefers-color-scheme:dark){:root{--bg:#12151a;--card:#1b2028;--fg:#e6e9ee;--muted:#9aa4b2;--line:#2a313c}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,'Segoe UI',sans-serif}
+main{max-width:860px;margin:0 auto;padding:16px}h1{margin:0;font-size:1.6rem}.date{color:var(--muted)}
+section{margin:22px 0}h2{font-size:1.15rem;border-bottom:2px solid var(--info);padding-bottom:4px}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.kpi,.finding{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px}.kpi b{display:block;font-size:1.6rem}
+.finding{margin:10px 0}.f-head{display:flex;justify-content:space-between;align-items:center;gap:8px}.f-head h3{margin:0;font-size:1rem}
+.chip{font-size:.75rem;padding:2px 8px;border-radius:99px;color:#fff;white-space:nowrap}.crit{background:var(--crit)}.warn{background:var(--warn)}.info{background:var(--info)}.ok{background:var(--ok)}
+table{width:100%;border-collapse:collapse;background:var(--card)}td,th{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left}
+.muted{color:var(--muted)}
+</style>
+</head>
+<body><main>
+<header><h1>BMW E39 {{MODELE}} ({{ANNEE}})</h1><div class="date">Diagnostic du {{DATE}}</div></header>
+
+<section class="summary">
+  <div class="kpi"><b>{{NB_A_TRAITER}}</b>à traiter</div>
+  <div class="kpi"><b>{{NB_A_SURVEILLER}}</b>à surveiller</div>
+  <div class="kpi"><b>{{NB_MODULES_OK}}</b>modules OK</div>
+</section>
+
+<section><h2>À traiter</h2>
+  <div class="finding">
+    <div class="f-head"><h3>{{TITRE_DEFAUT}}</h3><span class="chip crit">critique</span></div>
+    <p>{{DESCRIPTION}}</p>
+    <p><b>Cause probable :</b> {{CAUSE}}</p>
+    <p><b>Action :</b> {{ACTION}}</p>
+  </div>
+</section>
+
+<section><h2>À surveiller</h2>
+  <div class="finding">
+    <div class="f-head"><h3>{{TITRE_DEFAUT}}</h3><span class="chip warn">à surveiller</span></div>
+    <p>{{DESCRIPTION}}</p>
+  </div>
+</section>
+
+<section><h2>Valeurs moteur au ralenti</h2>
+  <table><tr><th>Valeur</th><th>Mesure</th><th>Normale</th><th>Statut</th></tr>
+  <tr><td>{{NOM_VALEUR}}</td><td>{{MESURE}}</td><td>{{PLAGE_NORMALE}}</td><td><span class="chip ok">OK</span></td></tr>
+  </table>
+</section>
+
+<section><h2>Trajet enregistré</h2>
+  <div class="finding"><div class="f-head"><h3>{{OBSERVATION}}</h3><span class="chip ok">OK</span></div><p>{{DETAIL}}</p></div>
+</section>
+
+<section><h2>Modules lus</h2>
+  <ul><li>{{MODULE}} : <span class="muted">{{STATUT}}</span></li></ul>
+</section>
+
+<section><h2>Ordre conseillé</h2>
+  <ol><li>{{REPARATION}}</li></ol>
+</section>
+</main></body>
+</html>

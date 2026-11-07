@@ -1,0 +1,14 @@
+# Logiciels BMW / Softing proprietaires : ne jamais versionner
+INPA_portable/EDIABAS/
+INPA_portable/INPA_Fxx_v.2/
+*.prg
+*.grp
+*.ipo
+*.exe
+*.dll
+
+# Journaux et mesures de la voiture
+INPA_portable/Diagnostics/
+Diagnostics/
+*.csv
+*.trc
