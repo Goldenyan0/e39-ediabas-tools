@@ -21,6 +21,8 @@ Aucune installation : rien n'est écrit dans le registre, et vous pouvez déplac
 | `tools/ediabas_job.ps1` | Lance un ou plusieurs jobs EDIABAS **de lecture** et affiche les résultats. |
 | `analysis/analyse_trajet.ps1` / `.py` | Statistiques d'un trajet : ralenti, croisière, charge, sondes lambda banc 1 / banc 2, VANOS, montée en température, coupures. |
 | `report/rapport_e39_modele.html` | Modèle de rapport de diagnostic (à remplir, espaces réservés `{{...}}`). |
+| `ncs/ncsdaten.py` | Décodeur des fichiers de données de NCS Expert (`.C*`, `SWTFSW01.dat`, `SWTPSW01.dat`…) : définitions, formats et enregistrements, avec vérification du contrôle XOR. Lecture seule. |
+| `ncs/liste_options.py` | Liste les options de codage (FSW) d'un module avec leurs valeurs possibles (PSW), traduites en anglais par le fichier de traduction de NCS Dummy. |
 
 ## Installation
 
@@ -53,6 +55,13 @@ E39_Outils\Enregistreur_trajet.bat
 powershell -File analysis\analyse_trajet.ps1 -Path INPA_portable\Diagnostics\trajet_2026-01-01_1200.csv
 python analysis\analyse_trajet.py INPA_portable\Diagnostics\trajet_2026-01-01_1200.csv
 ```
+
+```bat
+:: Lister les options de codage du LCM (dossier DATEN de NCS Expert, fichier de traduction de NCS Dummy)
+python ncs\liste_options.py C:\NCSEXPER\DATEN\E39 Translations.csv LCM.C18
+```
+
+Les fichiers de données BMW ne sont pas fournis : utilisez ceux de votre propre installation.
 
 ## Sécurité
 
