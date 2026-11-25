@@ -4,6 +4,15 @@ Scripts PowerShell et Python pour diagnostiquer une BMW E39 (moteur MS43) avec E
 
 > Ce dépôt ne contient **aucun logiciel BMW ni Softing** (EDIABAS, INPA, fichiers SGBD `.prg`/`.grp`). Ce sont des logiciels propriétaires : il faut disposer de sa propre installation.
 
+## Cadre du projet
+
+Projet personnel d'**étude** du diagnostic BMW, mené dans un cadre précis.
+
+- Les outils de ce dépôt **lisent** les calculateurs : ils ne modifient ni le logiciel ni le codage du véhicule.
+- Ce dépôt ne diffuse **aucun logiciel BMW** (INPA, EDIABAS, NCS Expert, fichiers de données) : utilisez votre propre installation.
+- Ne publiez jamais vos journaux ni vos rapports : ils peuvent contenir le VIN.
+- Aucune garantie : toute utilisation se fait sous votre seule responsabilité.
+
 ## Démarrage rapide : lancer INPA en un double-clic
 
 1. Copiez votre dossier **EDIABAS** et votre dossier **INPA_Fxx_v.2** dans `INPA_portable\`.
